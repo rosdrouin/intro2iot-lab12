@@ -16,7 +16,11 @@ void setup() {
 }
 
 void loop() {
+<<<<<<< Updated upstream
   isButtonOn = isButtonActivated(); // Button-based manual override
+=======
+  isButtonOn = isButtonActivated(buttonPin);  // Button-based manual override
+>>>>>>> Stashed changes
 
   // Control the LED
   if (isDark || isButtonOn) {
@@ -30,7 +34,12 @@ void loop() {
   delay(200); // basic debounce + sampling interval
 }
 
+<<<<<<< Updated upstream
 //
+=======
+/ ===============================
+
+>>>>>>> Stashed changes
 // Light Detection – Student 1
 bool isRoomDark() {
   int lightLevel = analogRead(lightSensorPin);
@@ -55,6 +64,14 @@ bool isButtonActivated() {
    Serial.println("Button: ON");
    digitalRead(buttonPin);
     // Button not pressed
+<<<<<<< Updated upstream
+=======
+    return true;
+  } else {
+    Serial.print("Button: OFF");
+    digitalRead(buttonPin);
+    // Button pressed
+>>>>>>> Stashed changes
     return false;
   } else {
     Serial.print("Button: OFF");
