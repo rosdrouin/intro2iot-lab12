@@ -16,8 +16,11 @@ void setup() {
 }
 
 void loop() {
-  isDark = isRoomDark();             // Light detection logic
-  isButtonOn = isButtonActivated();  // Button-based manual override
+<<<<<<< Updated upstream
+  isButtonOn = isButtonActivated(); // Button-based manual override
+=======
+  isButtonOn = isButtonActivated(buttonPin);  // Button-based manual override
+>>>>>>> Stashed changes
 
   // Control the LED
   if (isDark || isButtonOn) {
@@ -31,7 +34,12 @@ void loop() {
   delay(200); // basic debounce + sampling interval
 }
 
-// ===============================
+<<<<<<< Updated upstream
+//
+=======
+/ ===============================
+
+>>>>>>> Stashed changes
 // Light Detection – Student 1
 bool isRoomDark() {
   int lightLevel = analogRead(lightSensorPin);
@@ -47,6 +55,7 @@ bool isRoomDark() {
 }
 
 // ===============================
+
 // Manual Switch Control – Student 2
 bool isButtonActivated() {
   bool state = digitalRead(buttonPin);
@@ -56,11 +65,23 @@ bool isButtonActivated() {
   // TODO: Fix this logic and print the correct status
   // Button is normally HIGH
   if (state == HIGH) {
+   Serial.println("Button: ON");
+   digitalRead(buttonPin);
     // Button not pressed
+<<<<<<< Updated upstream
+=======
     return true;
   } else {
+    Serial.print("Button: OFF");
+    digitalRead(buttonPin);
     // Button pressed
+>>>>>>> Stashed changes
     return false;
+  } else {
+    Serial.print("Button: OFF");
+    digitalRead(buttonPin);
+    // Button pressed
+    return true;
   }
 
   // HINT: Serial.print should say "ON" or "OFF" too
